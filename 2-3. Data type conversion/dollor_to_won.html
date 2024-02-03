@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+
+  <script>
+    const rawInput = prompt('달러 단위의 금액을 입력해 주세요')
+    //prompt로 입력을 받으면 문자열 형태임
+    const dolor = Number(rawInput)
+    const won = dolor*1334.50.toFixed(2)
+
+    let service = ''
+
+    service += `<div>달러 : ${dolor} 달러</div>`
+    service += `<div>원화 : ${won} 원</div>`
+
+    document.write(service)
+  </script>
+</head>
+<body>
+</body>
+</html>
