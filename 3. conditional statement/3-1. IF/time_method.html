@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+
+    <style>
+      .container {
+        display: flex;
+      }
+      .container div {
+        /*컨테이너 class안에 있는 div로 명확히 선택*/
+        margin-right: 5px;
+        margin-bottom: 5px;
+      }
+    </style>
+
+    <script>
+      const date = new Date(); // date가 아닌 Date임.
+
+      let list = "";
+
+      list += `<div>지금은</div>`;
+      list += `<div class = "container">`;
+      list += ` <div>${date.getFullYear()}년\t</div>`;
+      list += ` <div>${date.getMonth() + 1}월</div>`; //getMonth메소드는 0~11값 출력
+      list += ` <div>${date.getDate()}일</div>`;
+      list += ` <div>${date.getHours()}시</div>`;
+      list += ` <div>${date.getMinutes()}분</div>`;
+      list += ` <div>${date.getSeconds()}초</div>`;
+      list += `</div>`;
+      if (date.getHours() > 12) {
+        list += `<div>지금은 오후입니다</div>`;
+      } else {
+        list += `<div>지금은 오전입니다</div>`;
+      }
+      document.write(list);
+    </script>
+  </head>
+  <body></body>
+</html>
