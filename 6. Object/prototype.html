@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script>
+      Number.prototype.power = function (n = 2) {
+        return this.valueOf() ** n;
+      };
+
+      const a = 12;
+
+      console.log("a.power():", a.power());
+      console.log("a.power():", a.power(3));
+      console.log("a.power():", a.power(4));
+
+      String.prototype.contain = function (string) {
+        return this.indexOf(string) >= 0;
+      };
+
+      const b = "안녕하세요";
+      console.log("b.contain('안녕')", b.contain("안녕"));
+      console.log("b.contain('하세요')", b.contain("하세요"));
+      console.log("b.contain('감사')", b.contain("감사"));
+    </script>
+  </head>
+  <body></body>
+</html>
