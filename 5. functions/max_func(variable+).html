@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+
+    <script>
+      const max = function (...parameter) {
+        let result;
+        let items;
+
+        if (Array.isArray(parameter[0])) {
+          items = parameter[0]; //자체가 배열
+        } else if (typeof parameter[0] === "number") {
+          //숫자로 올 경우
+          items = parameter;
+        }
+
+        result = items[0];
+
+        for (i of items) {
+          if (i > result) {
+            result = i;
+          }
+        }
+        return result;
+
+        // console.log(parameter)
+      };
+
+      console.log(`max(배열): ${max([1, 2, 3, 4, 5])}`);
+      console.log(`max(숫자, ...): ${max(1, 2, 3, 4, 5)}`);
+    </script>
+  </head>
+  <body></body>
+</html>
