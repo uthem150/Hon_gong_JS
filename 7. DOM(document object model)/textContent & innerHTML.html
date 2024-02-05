@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>textContent & innerHTML</title>
+  </head>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const a = document.querySelector("#a");
+      const b = document.querySelector("#b");
+
+      // textContent는 문자열을 그대로 넣음
+      a.textContent = "<h1>A</h1>";
+
+      // innerHTML은 문자열을 HTML형식으로 넣음
+      b.innerHTML = "<h1>B</h1>";
+    });
+  </script>
+  <body>
+    <div id="a">Hello</div>
+    <div id="b">Hello</div>
+  </body>
+</html>
