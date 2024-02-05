@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM content loaded</title>
+    <script>
+      //문서 객체를 모두 읽어 들이면, 콜백함수 실행됨.
+      document.addEventListener("DOMContentLoaded", () => {
+        // HTML 태그를 쉽게 만들 수 있는 콜백함수 선언
+        const h1 = (text) => `<h1>${text}</h1>`;
+        document.body.innerHTML += h1("DOMContentLoaded 이벤트 발생");
+      });
+    </script>
+  </head>
+  <body>
+    <h1>1번째 h1 태그</h1>
+    <script>
+      //HTML 태그를 쉽게 만들 수 있는 콜백함수가 DOMContentLoaded 이벤트 콜백 함수 안에서 선언되어 있으므로,
+      // 나타나지 않음
+      document.body.innerHTML += h1("1번째 script 태그");
+    </script>
+    <h1>2번째 h2태그</h1>
+  </body>
+</html>
