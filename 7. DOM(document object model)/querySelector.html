@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>querySelector</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // document안의 첫번째 h1태그를 선택하여 조작
+        const header = document.querySelector("h1");
+
+        header.textContent = "안녕하세요";
+        header.style.color = "white";
+        header.style.backgroundColor = "black";
+        header.style.margin = "10px";
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <h1>Hello</h1>
+  </body>
+</html>

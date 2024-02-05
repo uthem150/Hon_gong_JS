@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>querySelectorAll</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        //querySelectorAll은 배열로 저장함
+        headers = document.querySelectorAll("h1");
+
+        for (const header of headers) {
+          header.textContent = "안녕하세요";
+          header.style.color = "white";
+          header.style.backgroundColor = "black";
+          header.style.margin = "10px";
+        }
+
+        // headers.forEach((header) => {
+        //   header.textContent = "안녕하세요";
+        //   header.style.color = "white";
+        //   header.style.backgroundColor = "black";
+        //   header.style.margin = "10px";
+        // });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <h1>Hello</h1>
+    <h1>Hello</h1>
+  </body>
+</html>
