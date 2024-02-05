@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Control Attribute</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // rect 클래스 선택
+        const rects = document.querySelectorAll(".rect");
+
+        rects.forEach((rect, index) => {
+          const width = (index + 1) * 100;
+          const src = `http://placekitten.com/${width}/250`;
+          rect.setAttribute("src", src);
+        });
+
+        // for (rect of rects) {
+        //   rect.setAttribute("src", "http://placekitten.com/200/250");
+        // }
+      });
+    </script>
+  </head>
+  <body>
+    <img class="rect" />
+    <img class="rect" />
+    <img class="rect" />
+    <img class="rect" />
+  </body>
+</html>
