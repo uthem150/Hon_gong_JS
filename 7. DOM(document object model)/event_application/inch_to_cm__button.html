@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>inch -> cm</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const input = document.querySelector("input");
+        const button = document.querySelector("button");
+        const p = document.querySelector("p");
+
+        button.addEventListener("click", () => {
+          //textarea의 value를 숫자로 변환
+          const inch = Number(input.value);
+
+          //숫자가 아니면 리턴
+          if (isNaN(inch)) {
+            p.textContent = "숫자를 입력해주세요";
+            return;
+          }
+
+          //변환값 출력
+          const cm = inch * 2.54;
+          p.textContent = `${cm} cm`;
+        });
+      });
+    </script>
+    <style>
+      input {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <span>Inch를 입력하세요</span><br />
+    <input type="text" /><br />
+    <button>cm로 변환</button>
+    <p></p>
+  </body>
+</html>
