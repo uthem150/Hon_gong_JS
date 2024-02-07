@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Email_Validation 2</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const input = document.querySelector("input");
+        const p = document.querySelector("p");
+
+        input.addEventListener("keyup", () => {
+          const value = input.value; // 입력 필드의 값 가져오기
+          var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; // 이메일 패턴 정규식
+
+          const isValidEmail = value.match(pattern); // 입력 값의 유효성 확인
+
+          if (isValidEmail) {
+            // 유효한 이메일 형식일 경우
+            p.textContent = `이메일 형식 입니다: ${value}`;
+          } else {
+            // 유효하지 않은 이메일 형식일 경우
+            p.textContent = `이메일 형식이 아닙니다: ${value}`;
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- type="text"는 기본설정되어서 안써도 되긴 함. -->
+    <input type="email" /><br />
+    <p></p>
+  </body>
+</html>
