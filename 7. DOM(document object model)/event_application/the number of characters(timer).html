@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>글자 수 세기</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const textarea = document.querySelector("textarea");
+        const h1 = document.querySelector("h1");
+        let timerID;
+
+        //입력 양식 활성화
+        textarea.addEventListener("focus", (event) => {
+          timerID = setInterval(() => {
+            const length = textarea.value.length;
+            h1.textContent = `글자 수 : ${length}`;
+          }, 50); //50ms마다 내부 글자 수를 셈
+        });
+
+        //입력 양식 비활성화
+        textarea.addEventListener("blur", (event) => {
+          clearInterval(timerId);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>글자 수 : </h1>
+    <textarea></textarea>
+  </body>
+</html>
