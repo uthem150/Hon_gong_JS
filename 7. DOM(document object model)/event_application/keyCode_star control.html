@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        //별의 초기 설정
+        const star = document.querySelector("h1");
+        star.style.position = "absolute";
+
+        //별의 이동을 출력
+        let [x, y] = [0, 0];
+        const block = 20;
+        const print = () => {
+          // 화면의 너비와 높이를 가져옴
+          const screenWidth = window.innerWidth;
+          const screenHeight = window.innerHeight;
+
+          // 별의 위치를 제한(화면 사이즈 안으로만 이동)
+          // 현재 화면 너비를, 블록 단위로 나누고, 소숫점을 버리고 1 빼줌(블록이 화면 벗어나지 않게.).
+
+          //max를 이용해, 범위를 0~화면 영역으로 제한
+          x = Math.max(0, Math.min(x, Math.floor(screenWidth / block) - 1));
+          y = Math.max(0, Math.min(y, Math.floor(screenHeight / block) - 1));
+
+          star.style.left = `${x * block}px`;
+          star.style.top = `${y * block}px`;
+        };
+        print();
+
+        //별을 이동하는 기능
+        const [left, up, right, down] = [37, 38, 39, 40];
+
+        //한국어 처리때문에, keyup이벤트를 많이 쓰지만,
+        //방향키는 상관없음. (게임 할 때 꾹 누를 가능성이 많으므로 down으로)
+        document.body.addEventListener("keydown", (event) => {
+          // keyCode속성은 입력한 키를 숫자로 나타냄
+          // 인터넷 익스플로어를 지원하기 위해, keyCode사용.
+          switch (event.keyCode) {
+            case left:
+              x -= 1;
+              break;
+            case up:
+              y -= 1;
+              break;
+            case right:
+              x += 1;
+              break;
+            case down:
+              y += 1;
+              break;
+          }
+          print();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>★</h1>
+  </body>
+</html>
