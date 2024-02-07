@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>checkBox timer</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let [timer, timerID] = [0, 0];
+        const h1 = document.querySelector("h1");
+        const checkBox = document.querySelector("input");
+        const span = document.querySelector("span");
+        const button = document.querySelector("button");
+
+        checkBox.addEventListener("change", () => {
+          // 체크박스 체크 되었을 때.
+          if (event.currentTarget.checked) {
+            timerID = setInterval(() => {
+              timer += 1;
+              h1.textContent = `${timer / 10}초`;
+            }, 100);
+          } else {
+            //체크박스 해제되었을 때
+            clearInterval(timerID);
+          }
+        });
+        button.addEventListener("click", () => {
+          timer = 0;
+          h1.textContent = `${timer / 10}초`; //변경사항을 h1태그를 업데이트 해줘야 함.
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="checkbox" />
+    <span>타이머 활성화</span>
+    <h1>0초</h1>
+    <br />
+    <button>reset</button>
+  </body>
+</html>
